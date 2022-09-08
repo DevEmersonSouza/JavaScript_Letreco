@@ -6,7 +6,7 @@ let fifthMatch = "";
 
 let attemptArray = "";
 
-let letrecoDoDia = "vasco"
+let letrecoDoDia = ["v", "a", "s", "c", "o"]
 
 let matchConfig = "";
 
@@ -18,15 +18,22 @@ function match() {
     inputOneFifthMatch = document.getElementById("fifthLetter").value;
 
     attemptArray = [inputOnefirstMatch, inputOneSecondMatch, inputOneThirdMatch, inputOneFourthMatch, inputOneFifthMatch]
-    
-    
-    for (i = 0; i < 1; i++) {
+    console.log(attemptArray);
 
-        let matchConfig = letrecoDoDia.indexOf(inputOnefirstMatch);
+        matchConfig = letrecoDoDia.indexOf(inputOnefirstMatch);
+        console.log(matchConfig)
 
-        console.log(matchConfig);
-        
-    }
+        if (matchConfig <= 0) {
+            let element = document.getElementById("firstLetter");
+            element.style.backgroundColor = "#00ff00";
+            console.log("ok")
     
+        }
+        else {
+            let element = document.getElementById("firstLetter");
+            element.style.backgroundColor = "#ff0000";
+            console.log("não encontrado")
+        }
+
 }
 
