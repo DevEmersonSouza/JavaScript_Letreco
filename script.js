@@ -8,7 +8,7 @@ let attemptArray = "";
 
 let letrecoDoDia = ["v", "a", "s", "c", "o"]
 
-let matchConfig = "";
+let matchFirstInput = "";
 
 function match() {
     inputOnefirstMatch = document.getElementById("firstLetter").value;
@@ -17,22 +17,28 @@ function match() {
     inputOneFourthMatch = document.getElementById("fourthLetter").value;
     inputOneFifthMatch = document.getElementById("fifthLetter").value;
 
-    attemptArray = [inputOnefirstMatch, inputOneSecondMatch, inputOneThirdMatch, inputOneFourthMatch, inputOneFifthMatch]
-    console.log(attemptArray);
+    console.log(inputOnefirstMatch)
 
-        matchConfig = letrecoDoDia.indexOf(inputOnefirstMatch);
-        console.log(matchConfig)
+    matchFirstInput = letrecoDoDia.indexOf(inputOnefirstMatch);
+    console.log(matchFirstInput)
 
-        if (matchConfig <= 0) {
+    if (matchFirstInput === -1) {
+        let element = document.getElementById("firstLetter");
+        element.style.backgroundColor = "#ff0000";
+        console.log("não encontrado")
+    }
+
+    if (matchFirstInput !== -1) {
+        if (matchFirstInput === 0) {
             let element = document.getElementById("firstLetter");
             element.style.backgroundColor = "#00ff00";
-            console.log("ok")
-    
+            console.log("encontrado no local certo")
         }
-        else {
+        if (matchFirstInput === 1 || matchFirstInput === 2 || matchFirstInput === 3 || matchFirstInput === 4) {
             let element = document.getElementById("firstLetter");
-            element.style.backgroundColor = "#ff0000";
-            console.log("não encontrado")
+            element.style.backgroundColor = "#ffff00";
+            console.log("encontrado mas no local errado")
         }
+    }
 
 }
