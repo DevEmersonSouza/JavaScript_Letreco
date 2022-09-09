@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="generalContainer">
+    <div class="boxesRow">
         <div >
-            <input type="text" class="box" id="firstLetter">
-            <input type="text" class="box" id="secondLetter">
-            <input type="text" class="box" id="thirdLetter">
-            <input type="text" class="box" id="fourthLetter">
-            <input type="text" class="box" id="fifthLetter">
+            <input type="text" class="box" data-ls-module="charCounter"  maxlength="1" id="firstLetter" onkeyup="tabTwo()">
+            <input type="text" class="box" data-ls-module="charCounter"  maxlength="1" id="secondLetter" onkeyup="tabTree()">
+            <input type="text" class="box" data-ls-module="charCounter"  maxlength="1" id="thirdLetter" onkeyup="tabFour()">
+            <input type="text" class="box" data-ls-module="charCounter"  maxlength="1" id="fourthLetter" onkeyup="tabFive()">
+            <input type="text" class="box" data-ls-module="charCounter"  maxlength="1" id="fifthLetter" >
         </div>
         
-        <input type="submit" value="Match!" onclick="match()" class="submitButton">
+    </div>
+    <div class="submitRow">
+        <input type="submit" value="Match!" onclick="matchFirst(); matchSecond(); matchThird(); matchFourth(); matchFifth()" class="submitButton" id="submitButton">
+        <input type="submit" value="X" class="backspaceButton" id="backspaceButton">
     </div>
     
    
@@ -25,4 +28,4 @@
     
     <script src="script.js"></script>
 </body>
-</html>
+</html> 

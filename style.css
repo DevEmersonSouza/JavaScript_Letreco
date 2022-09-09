@@ -10,7 +10,7 @@ input {
   }
 
 
-.generalContainer{
+.boxesRow{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,8 +28,29 @@ input {
 }
 
 .submitButton{
+    font-size: 16pt;
+    text-align: center;
     margin: 15px;
     padding: 5px;
+    width: 60px;
+    height: 20px;
     border-radius: 0.25rem;
     border: 1px solid black;
+}
+
+.backspaceButton{
+    font-size: 16pt;
+    text-align: center;
+    font-weight: 700;
+    margin: 15px;
+    padding: 5px;
+    width: 60px;
+    height: 20px;
+    border-radius: 0.25rem;
+    border: 1px solid black;
+}
+.submitRow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
