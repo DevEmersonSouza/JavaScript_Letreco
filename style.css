@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+*{
+    font-family: 'Bangers', cursive;
+
+}
+
+input {
+    all: unset;
+  }
+
+
+.generalContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.box{
+    font-size: 20pt;
+    text-align: center;
+    width: 48px;
+    height: 40px;
+    border-radius: 0.25rem;
+    border: 1px solid black;
+}
+
+.submitButton{
+    margin: 15px;
+    padding: 5px;
+    border-radius: 0.25rem;
+    border: 1px solid black;
+}
