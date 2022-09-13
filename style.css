@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 *{
     font-family: 'Bangers', cursive;
 
@@ -53,4 +53,18 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.title{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30pt;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.subtitle{
+    font-family: 'Permanent Marker', cursive;
+    margin: 0 0 20px 0;
+    
 }
