@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-*{
+
+* {
     font-family: 'Bangers', cursive;
 
 }
 
 input {
     all: unset;
-  }
+}
 
-
-.boxesRow{
+.boxesRow {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +18,7 @@ input {
     gap: 0.5rem;
 }
 
-.box{
+.box {
     font-size: 20pt;
     text-align: center;
     width: 48px;
@@ -27,7 +27,7 @@ input {
     border: 1px solid black;
 }
 
-.submitButton{
+.submitButton {
     font-size: 16pt;
     text-align: center;
     margin: 15px;
@@ -38,7 +38,7 @@ input {
     border: 1px solid black;
 }
 
-.backspaceButton{
+.backspaceButton {
     font-size: 16pt;
     text-align: center;
     font-weight: 700;
@@ -49,22 +49,26 @@ input {
     border-radius: 0.25rem;
     border: 1px solid black;
 }
-.submitRow{
+
+.submitRow {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.title{
+.title {
     font-family: 'Permanent Marker', cursive;
     font-size: 30pt;
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
     color: transparent;
+    text-align: center;
+    width: 200px;
 }
 
-.subtitle{
+.subtitle {
     font-family: 'Permanent Marker', cursive;
     margin: 0 0 20px 0;
-    
+    text-align: center;
+
 }

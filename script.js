@@ -1,7 +1,6 @@
 let letrecoDoDia = "vasco"
-
-let boxesRow = document.getElementById("firstLetter secondLetter thirdLetter fourthLetter fifthLetter").value;
-
+let inputsRow = [document.getElementById("firstLetter").value, document.getElementById("secondLetter").value, document.getElementById("thirdLetter").value, document.getElementById("fourthLetter").value, document.getElementById("fifthLetter").value]
+console.log(inputsRow)
 
 function matchFirst() {
     inputOnefirstMatch = document.getElementById("firstLetter").value;
@@ -143,8 +142,22 @@ function matchFifth() {
 
 }
 
+let inputs = document.querySelectorAll(".boxesRow input");
+for (let i = 0; i < inputs.length; ++i) {
+    inputs[i].onkeyup = function (evento) {
+        if (evento.key == "Backspace") {
+            if (i > 0 && this.value.length == 0) {
+                inputs[i - 1].focus();
+            }
+        }
+        else if ((i + 1) < inputs.length && this.value.length >= 1) {
+            inputs[i + 1].focus();
+        }
+        
+    }
+}
 
-if (boxesRow.length < 4) {
+if (inputsRow.length === 0) {
     alert("Somente palavras com 5 letras!")
     let element = document.getElementById("firstLetter secondLetter thirdLetter fourthLetter fifthLetter");
     element.style.backgroundColor = "#ffffff";
@@ -161,20 +174,6 @@ document.addEventListener("keypress", function (e) {
 });
 
 
-let inputs = document.querySelectorAll(".boxesRow input");
-for (let i = 0; i < inputs.length; ++i) {
-    inputs[i].onkeyup = function (evento) {
-        if (evento.key == "Backspace") {
-            if (i > 0 && this.value.length == 0) {
-                inputs[i - 1].focus();
-            }
-        }
-        else if ((i + 1) < inputs.length && this.value.length >= 1) {
-            inputs[i + 1].focus();
-        }
-        
-    }
-}
 
 
 
