@@ -1,6 +1,6 @@
-let letrecoDoDia = ["v", "a", "s", "c", "o"]
+let letrecoDoDia = "vasco"
 
-let matchFirstInput = "";
+let boxesRow = document.getElementById("firstLetter secondLetter thirdLetter fourthLetter fifthLetter").value;
 
 
 function matchFirst() {
@@ -29,28 +29,22 @@ function matchFirst() {
             console.log("encontrado mas no local errado")
         }
     }
-
-    if (inputOnefirstMatch === "") {
-        alert("Insira uma letra na primeira casa")
-        let element = document.getElementById("firstLetter");
-            element.style.backgroundColor = "#ffffff";
-    }
 }
 
 function matchSecond() {
     inputOneSecondMatch = document.getElementById("secondLetter").value;
 
     console.log(inputOneSecondMatch)
-    
+
     matchSecondInput = letrecoDoDia.indexOf(inputOneSecondMatch);
     console.log(matchSecondInput)
-    
+
     if (matchSecondInput === -1) {
         let element = document.getElementById("secondLetter");
         element.style.backgroundColor = "#ff0000";
         console.log("não encontrado")
     }
-    
+
     if (matchSecondInput !== -1) {
         if (matchSecondInput === 1) {
             let element = document.getElementById("secondLetter");
@@ -63,26 +57,21 @@ function matchSecond() {
             console.log("encontrado mas no local errado")
         }
     }
-    if (inputOneSecondMatch === "") {
-        alert("Insira uma letra na segunda casa")
-        let element = document.getElementById("secondLetter");
-            element.style.backgroundColor = "#ffffff";
-    }
 }
 function matchThird() {
     inputOneThirdMatch = document.getElementById("thirdLetter").value;
-    
+
     console.log(inputOneThirdMatch)
-    
+
     matchThirdInput = letrecoDoDia.indexOf(inputOneThirdMatch);
     console.log(matchThirdInput)
-    
+
     if (matchThirdInput === -1) {
         let element = document.getElementById("thirdLetter");
         element.style.backgroundColor = "#ff0000";
         console.log("não encontrado")
     }
-    
+
     if (matchThirdInput !== -1) {
         if (matchThirdInput === 2) {
             let element = document.getElementById("thirdLetter");
@@ -95,17 +84,13 @@ function matchThird() {
             console.log("encontrado mas no local errado")
         }
     }
-    if (inputOneThirdMatch === "") {
-        alert("Insira uma letra na terceira casa")
-        let element = document.getElementById("thirdLetter");
-            element.style.backgroundColor = "#ffffff";
-    }
+
 }
 function matchFourth() {
     inputOneFourthMatch = document.getElementById("fourthLetter").value;
-    
+
     console.log(inputOneFourthMatch)
-    
+
     matchFourthInput = letrecoDoDia.indexOf(inputOneFourthMatch);
     console.log(matchFourthInput)
 
@@ -114,7 +99,7 @@ function matchFourth() {
         element.style.backgroundColor = "#ff0000";
         console.log("não encontrado")
     }
-    
+
     if (matchFourthInput !== -1) {
         if (matchFourthInput === 3) {
             let element = document.getElementById("fourthLetter");
@@ -127,17 +112,13 @@ function matchFourth() {
             console.log("encontrado mas no local errado")
         }
     }
-    if (inputOneFourthMatch === "") {
-        alert("Insira uma letra na quarta casa")
-        let element = document.getElementById("fourthLetter");
-            element.style.backgroundColor = "#ffffff";
-    }
+
 }
 function matchFifth() {
     inputOneFifthhMatch = document.getElementById("fifthLetter").value;
-    
+
     console.log(inputOneFifthhMatch)
-    
+
     matchFifthInput = letrecoDoDia.indexOf(inputOneFifthhMatch);
     console.log(matchFifthInput)
 
@@ -146,7 +127,7 @@ function matchFifth() {
         element.style.backgroundColor = "#ff0000";
         console.log("não encontrado")
     }
-    
+
     if (matchFifthInput !== -1) {
         if (matchFifthInput === 4) {
             let element = document.getElementById("fifthLetter");
@@ -159,47 +140,41 @@ function matchFifth() {
             console.log("encontrado mas no local errado")
         }
     }
-    if (inputOneFourthMatch === "") {
-        alert("Insira uma letra na quinta casa")
-        let element = document.getElementById("fifthLetter");
-            element.style.backgroundColor = "#ffffff";
-    }
+
 }
 
-document.addEventListener("keypress", function(e) {
-    if(e.key === 'Enter') {
-    
+
+if (boxesRow.length < 4) {
+    alert("Somente palavras com 5 letras!")
+    let element = document.getElementById("firstLetter secondLetter thirdLetter fourthLetter fifthLetter");
+    element.style.backgroundColor = "#ffffff";
+}
+
+document.addEventListener("keypress", function (e) {
+    if (e.key === 'Enter') {
+
         let btn = document.getElementById("submitButton");
-      
-      btn.click();
-    
-    }
-  });
 
-  document.addEventListener("keypress", function(e) {
-    if(e.key === 'Backspace') {
-    
-        let btn = document.getElementById("backspaceButton");
-      
-      btn.click();
-      fifthLetter.onfocus()
-      
-    
-    }
-  });
+        btn.click();
 
-function tabTwo(){
-    secondLetter.focus()
+    }
+});
+
+
+let inputs = document.querySelectorAll(".boxesRow input");
+for (let i = 0; i < inputs.length; ++i) {
+    inputs[i].onkeyup = function (evento) {
+        if (evento.key == "Backspace") {
+            if (i > 0 && this.value.length == 0) {
+                inputs[i - 1].focus();
+            }
+        }
+        else if ((i + 1) < inputs.length && this.value.length >= 1) {
+            inputs[i + 1].focus();
+        }
+        
+    }
 }
-function tabTree(){
-    thirdLetter.focus()
-}
-function tabFour(){
-    fourthLetter.focus()
-}
-function tabFive(){
-    fifthLetter.focus()
-}
-function tabSix(){
-    fifthLetter.focus()
-}
+
+
+
