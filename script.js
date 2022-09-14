@@ -143,6 +143,7 @@ function matchFifth() {
 }
 
 let inputs = document.querySelectorAll(".boxesRow input");
+
 for (let i = 0; i < inputs.length; ++i) {
     inputs[i].onkeyup = function (evento) {
         if (evento.key == "Backspace") {
