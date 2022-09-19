@@ -1,6 +1,9 @@
-let letrecoDoDia = "vasco"
-let inputsRow = [document.getElementById("firstLetter").value, document.getElementById("secondLetter").value, document.getElementById("thirdLetter").value, document.getElementById("fourthLetter").value, document.getElementById("fifthLetter").value]
-console.log(inputsRow)
+let letrecoDoDia = "vasco";
+let teste = 0;
+let teste2 = 0;
+let teste3 = 0;
+
+
 
 function matchFirst() {
     inputOnefirstMatch = document.getElementById("firstLetter").value;
