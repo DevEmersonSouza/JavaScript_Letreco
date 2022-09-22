@@ -1,16 +1,59 @@
+// Palavra alvo
 let letrecoDoDia = "vasco";
-let teste = 0;
-let teste2 = 0;
-let teste3 = 0;
+console.log(letrecoDoDia)
 
+// function teste() {
+//     let valor1 = document.getElementById("firstLetter").value;
+//     let valor2 = document.getElementById("secondLetter").value;
+//     let valor3 = document.getElementById("thirdLetter").value;
+//     let valor4 = document.getElementById("fourthLetter").value;
+//     let valor5 = document.getElementById("fifthLetter").value;
+//     let valorGeral = [valor1, valor2, valor3, valor4, valor5]
+//     console.log(valorGeral)
 
+//     let match1 = letrecoDoDia.indexOf(valor1)
+//     let match2 = letrecoDoDia.indexOf(valor2)
+//     let match3 = letrecoDoDia.indexOf(valor3)
+//     let match4 = letrecoDoDia.indexOf(valor4)
+//     let match5 = letrecoDoDia.indexOf(valor5)
+
+//     console.log (match1, match2, match3, match4, match5)
+//     if (match1 === -1 || match2 === -1 || match3 === -1 || match4 === -1 || match5 === -1) {
+//         document.getElementById("firstLetter").style.backgroundColor = "#ff0000";
+//         document.getElementById("secondLetter").style.backgroundColor = "#ff0000";
+//         document.getElementById("thirdLetter").style.backgroundColor = "#ff0000";
+//         document.getElementById("fourthLetter").style.backgroundColor = "#ff0000";
+//         document.getElementById("fifthLetter").style.backgroundColor = "#ff0000";
+//         console.log("não encontrado")
+
+//         if (match1 > 0 || match2 > 0 || match3 > 0 || match4 > 0 || match5 > 0)
+//             if (match1 === 0 || match2 === 1 || match3 === 2 || match4 === 3|| match5 === 4)
+//             document.getElementById("firstLetter").style.backgroundColor = "#00ff00";
+//             document.getElementById("secondLetter").style.backgroundColor = "#00ff00";
+//             document.getElementById("thirdLetter").style.backgroundColor = "#00ff00";
+//             document.getElementById("fourthLetter").style.backgroundColor = "#00ff00";
+//             document.getElementById("fifthLetter").style.backgroundColor = "#00ff00";
+//             console.log("não encontrado")
+//     }
+// }
+// Função para execução das validações
+
+function match() {
+    matchFirst();
+    matchSecond();
+    matchThird();
+    matchFourth();
+    matchFifth();
+}
+
+// validação dos inputs com o indexOf
 
 function matchFirst() {
-    inputOnefirstMatch = document.getElementById("firstLetter").value;
+    let inputOnefirstMatch = document.getElementById("firstLetter").value;
 
     console.log(inputOnefirstMatch)
 
-    matchFirstInput = letrecoDoDia.indexOf(inputOnefirstMatch);
+    let matchFirstInput = letrecoDoDia.indexOf(inputOnefirstMatch);
     console.log(matchFirstInput)
 
     if (matchFirstInput === -1) {
@@ -34,11 +77,11 @@ function matchFirst() {
 }
 
 function matchSecond() {
-    inputOneSecondMatch = document.getElementById("secondLetter").value;
+    let inputOneSecondMatch = document.getElementById("secondLetter").value;
 
     console.log(inputOneSecondMatch)
 
-    matchSecondInput = letrecoDoDia.indexOf(inputOneSecondMatch);
+    let matchSecondInput = letrecoDoDia.indexOf(inputOneSecondMatch);
     console.log(matchSecondInput)
 
     if (matchSecondInput === -1) {
@@ -61,11 +104,11 @@ function matchSecond() {
     }
 }
 function matchThird() {
-    inputOneThirdMatch = document.getElementById("thirdLetter").value;
+    let inputOneThirdMatch = document.getElementById("thirdLetter").value;
 
     console.log(inputOneThirdMatch)
 
-    matchThirdInput = letrecoDoDia.indexOf(inputOneThirdMatch);
+    let matchThirdInput = letrecoDoDia.indexOf(inputOneThirdMatch);
     console.log(matchThirdInput)
 
     if (matchThirdInput === -1) {
@@ -89,11 +132,11 @@ function matchThird() {
 
 }
 function matchFourth() {
-    inputOneFourthMatch = document.getElementById("fourthLetter").value;
+    let inputOneFourthMatch = document.getElementById("fourthLetter").value;
 
     console.log(inputOneFourthMatch)
 
-    matchFourthInput = letrecoDoDia.indexOf(inputOneFourthMatch);
+    let matchFourthInput = letrecoDoDia.indexOf(inputOneFourthMatch);
     console.log(matchFourthInput)
 
     if (matchFourthInput === -1) {
@@ -117,11 +160,11 @@ function matchFourth() {
 
 }
 function matchFifth() {
-    inputOneFifthhMatch = document.getElementById("fifthLetter").value;
+    let inputOneFifthhMatch = document.getElementById("fifthLetter").value;
 
     console.log(inputOneFifthhMatch)
 
-    matchFifthInput = letrecoDoDia.indexOf(inputOneFifthhMatch);
+    let matchFifthInput = letrecoDoDia.indexOf(inputOneFifthhMatch);
     console.log(matchFifthInput)
 
     if (matchFifthInput === -1) {
@@ -144,6 +187,32 @@ function matchFifth() {
     }
 
 }
+// Verificação para identificar se a palavra tem 05 letras
+
+function verificarInputs() {
+
+    let val1 = document.getElementById("firstLetter").value;
+    let val2 = document.getElementById("secondLetter").value;
+    let val3 = document.getElementById("thirdLetter").value;
+    let val4 = document.getElementById("fourthLetter").value;
+    let val5 = document.getElementById("fifthLetter").value;
+
+    if (val1 != "" && val2 != "" && val3 != "" && val4 != "" && val5 != "") {
+
+    } else {
+        alert("Apenas palavras com 5 letras");
+        window.location.reload(false);
+    }
+}
+
+document.addEventListener("keypress", function (e) {
+    if (e.key === 'Enter') {
+        let btn = document.getElementById("submitButton");
+        btn.click(verificarInputs());
+    }
+});
+
+// Função "backspace"
 
 let inputs = document.querySelectorAll(".boxesRow input");
 
@@ -157,25 +226,10 @@ for (let i = 0; i < inputs.length; ++i) {
         else if ((i + 1) < inputs.length && this.value.length >= 1) {
             inputs[i + 1].focus();
         }
-        
+
     }
 }
 
-if (inputsRow.length === 0) {
-    alert("Somente palavras com 5 letras!")
-    let element = document.getElementById("firstLetter secondLetter thirdLetter fourthLetter fifthLetter");
-    element.style.backgroundColor = "#ffffff";
-}
-
-document.addEventListener("keypress", function (e) {
-    if (e.key === 'Enter') {
-
-        let btn = document.getElementById("submitButton");
-
-        btn.click();
-
-    }
-});
 
 
 

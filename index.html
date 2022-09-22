@@ -16,21 +16,22 @@
             By Emerson Souza
         </div>
     </div>
-    <div class="boxesRow">
-        <div>
-            <input type="text" class="box" maxlength="1" id="firstLetter" onkeyup="secondLetter.focus()">
-            <input type="text" class="box" maxlength="1" id="secondLetter" onkeyup="thirdLetter.focus()">
-            <input type="text" class="box" maxlength="1" id="thirdLetter" onkeyup="fourthLetter.focus()">
-            <input type="text" class="box" maxlength="1" id="fourthLetter" onkeyup="fifthLetter.focus()">
-            <input type="text" class="box" maxlength="1" id="fifthLetter">
+        <div class="boxesRow">
+            <div class="inputsRow" id="inputsRow">
+                <input type="text" class="box" maxlength="1" id="firstLetter" onkeyup="secondLetter.focus()">
+                <input type="text" class="box" maxlength="1" id="secondLetter" onkeyup="thirdLetter.focus()">
+                <input type="text" class="box" maxlength="1" id="thirdLetter" onkeyup="fourthLetter.focus()">
+                <input type="text" class="box" maxlength="1" id="fourthLetter" onkeyup="fifthLetter.focus()">
+                <input type="text" class="box" maxlength="1" id="fifthLetter">
+            </div>
+            
         </div>
-        
-    </div>
-    <div class="submitRow">
-        <input type="submit" value="Match!" onclick="matchFirst(); matchSecond(); matchThird(); matchFourth(); matchFifth()" class="submitButton" id="submitButton">
-        <input type="submit" value="X" class="backspaceButton" id="">
-    </div>
+        <div class="submitRow">
+            <input type="submit" value="Match!" onclick="match(); verificarInputs();" class="submitButton" id="submitButton">
+            <input type="submit" value="X" class="backspaceButton" id="">
+        </div>
     
+        <!-- /* teste(); /* -->
    
 <body>
     
