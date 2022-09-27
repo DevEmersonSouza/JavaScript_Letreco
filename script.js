@@ -214,19 +214,21 @@ document.addEventListener("keypress", function (e) {
 
 // Função "backspace"
 
+
+function backspace(){
 let inputs = document.querySelectorAll(".boxesRow input");
-
-for (let i = 0; i < inputs.length; ++i) {
-    inputs[i].onkeyup = function (evento) {
-        if (evento.key == "Backspace") {
-            if (i > 0 && this.value.length == 0) {
-                inputs[i - 1].focus();
+    for (let i = 0; i < inputs.length; ++i) {
+        inputs[i].onkeyup = function (evento) {
+            if (evento.key == "Backspace") {
+                if (i > 0 && this.value.length == 0) {
+                    inputs[i - 1].focus();
+                }
             }
+            else if ((i + 1) < inputs.length && this.value.length >= 1) {
+                inputs[i + 1].focus();
+            }
+    
         }
-        else if ((i + 1) < inputs.length && this.value.length >= 1) {
-            inputs[i + 1].focus();
-        }
-
     }
 }
 
