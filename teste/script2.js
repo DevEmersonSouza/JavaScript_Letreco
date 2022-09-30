@@ -1,43 +1,25 @@
 let letrecoDoDia = "vasco";
 
-//declarando os valores
-let valor1 = document.getElementById("firstLetter").value;
-let valor2 = document.getElementById("secondLetter").value;
-let valor3 = document.getElementById("thirdLetter").value;
-let valor4 = document.getElementById("fourthLetter").value;
-let valor5 = document.getElementById("fifthLetter").value;
-let valorGeral = [valor1, valor2, valor3, valor4, valor5]
-
-function verificarInputs() {
-    console.log(valorGeral)
-    
-    let val1 = document.getElementById("firstLetter").value;
-    let val2 = document.getElementById("secondLetter").value;
-    let val3 = document.getElementById("thirdLetter").value;
-    let val4 = document.getElementById("fourthLetter").value;
-    let val5 = document.getElementById("fifthLetter").value;
-    
-    if (val1 != "" && val2 != "" && val3 != "" && val4 != "" && val5 != "") {
-        
-    } else {
-        alert("Apenas palavras com 5 letras");
-        window.location.reload(false);
-        return
-    }
-}
-
 function teste() {
+    //declarando os valores
+    let valor1 = document.getElementById("firstLetter").value;
+    let valor2 = document.getElementById("secondLetter").value;
+    let valor3 = document.getElementById("thirdLetter").value;
+    let valor4 = document.getElementById("fourthLetter").value;
+    let valor5 = document.getElementById("fifthLetter").value;
+    let valorGeral = [valor1, valor2, valor3, valor4, valor5]
+    console.log(valorGeral)
 
     //match dos valores do indexof
     let match1 = letrecoDoDia.indexOf(valor1)
     console.log(match1)
-    
+
     if (match1 === -1) {
         let element = document.getElementById("firstLetter");
         element.style.backgroundColor = "#ff0000";
         console.log("não encontrado")
     }
-    
+
     if (match1 !== -1) {
         if (match1 === 0) {
             let element = document.getElementById("firstLetter");
@@ -48,9 +30,10 @@ function teste() {
             let element = document.getElementById("firstLetter");
             element.style.backgroundColor = "#ffff00";
             console.log("encontrado mas no local errado")
+            return 
         }
     }
-    
+
     let match2 = letrecoDoDia.indexOf(valor2)
     console.log(match2)
 
@@ -139,6 +122,21 @@ function teste() {
     let matchGeral = [match1, match2, match3, match4, match5]
     console.log(matchGeral)
 
+}
+function verificarInputs() {
+    let val1 = document.getElementById("firstLetter").value;
+    let val2 = document.getElementById("secondLetter").value;
+    let val3 = document.getElementById("thirdLetter").value;
+    let val4 = document.getElementById("fourthLetter").value;
+    let val5 = document.getElementById("fifthLetter").value;
+
+    if (val1 != "" && val2 != "" && val3 != "" && val4 != "" && val5 != "") {
+
+    } else {
+        alert("Apenas palavras com 5 letras");
+        window.location.reload(false);
+        return
+    }
 }
 
 document.addEventListener("keypress", function (e) {
