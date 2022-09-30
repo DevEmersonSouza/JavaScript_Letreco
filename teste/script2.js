@@ -1,5 +1,18 @@
 let letrecoDoDia = "vasco";
 
+// let tentativaAtual = document.querySelectorAll(".boxesRow input").value;
+// console.logo
+// for (let i = 0; i < tentativaAtual.length; ++i) {
+//         if (tentativaAtual.length <= 5) {
+//             document.getElementById("submitButton").disabled = false;
+//         }
+//         else if ((i + 1) < inputs.length && this.value.length >= 1) {
+//             inputs[i + 1].focus();
+//         }
+
+//     }
+
+
 function teste() {
     //declarando os valores
     let valor1 = document.getElementById("firstLetter").value;
@@ -10,9 +23,18 @@ function teste() {
     let valorGeral = [valor1, valor2, valor3, valor4, valor5]
     console.log(valorGeral)
 
+    if (valor1 != "" && valor2 != "" && valor3 != "" && valor4 != "" && valor5 != "") {
+    } else {
+        document.location.reload(true);
+        return
+    }
+
     //match dos valores do indexof
     let match1 = letrecoDoDia.indexOf(valor1)
-    console.log(match1)
+    let match2 = letrecoDoDia.indexOf(valor2)
+    let match3 = letrecoDoDia.indexOf(valor3)
+    let match4 = letrecoDoDia.indexOf(valor4)
+    let match5 = letrecoDoDia.indexOf(valor5)
 
     if (match1 === -1) {
         let element = document.getElementById("firstLetter");
@@ -30,12 +52,8 @@ function teste() {
             let element = document.getElementById("firstLetter");
             element.style.backgroundColor = "#ffff00";
             console.log("encontrado mas no local errado")
-            return 
         }
     }
-
-    let match2 = letrecoDoDia.indexOf(valor2)
-    console.log(match2)
 
     if (match2 === -1) {
         let element = document.getElementById("secondLetter");
@@ -56,8 +74,6 @@ function teste() {
         }
     }
 
-    let match3 = letrecoDoDia.indexOf(valor3)
-
     if (match3 === -1) {
         let element = document.getElementById("thirdLetter");
         element.style.backgroundColor = "#ff0000";
@@ -77,8 +93,6 @@ function teste() {
         }
     }
 
-    let match4 = letrecoDoDia.indexOf(valor4)
-
     if (match4 === -1) {
         let element = document.getElementById("fourthLetter");
         element.style.backgroundColor = "#ff0000";
@@ -97,8 +111,6 @@ function teste() {
             console.log("encontrado mas no local errado")
         }
     }
-
-    let match5 = letrecoDoDia.indexOf(valor5)
 
     if (match5 === -1) {
         let element = document.getElementById("fifthLetter");
@@ -123,21 +135,6 @@ function teste() {
     console.log(matchGeral)
 
 }
-function verificarInputs() {
-    let val1 = document.getElementById("firstLetter").value;
-    let val2 = document.getElementById("secondLetter").value;
-    let val3 = document.getElementById("thirdLetter").value;
-    let val4 = document.getElementById("fourthLetter").value;
-    let val5 = document.getElementById("fifthLetter").value;
-
-    if (val1 != "" && val2 != "" && val3 != "" && val4 != "" && val5 != "") {
-
-    } else {
-        alert("Apenas palavras com 5 letras");
-        window.location.reload(false);
-        return
-    }
-}
 
 document.addEventListener("keypress", function (e) {
     if (e.key === 'Enter') {
@@ -146,23 +143,30 @@ document.addEventListener("keypress", function (e) {
     }
 });
 
-function backspace() {
+document.addEventListener("keypress", function (evento) {
     let inputs = document.querySelectorAll(".boxesRow input");
     for (let i = 0; i < inputs.length; ++i) {
         inputs[i].onkeyup = function (evento) {
             if (evento.key == "Backspace") {
-                if (i > 0 || this.value.length == 0) {
+                if (i > 0 && this.value.length == 0) {
                     inputs[i - 1].focus();
                 }
             }
-            else if ((i + 1) < inputs.length || this.value.length >= 1) {
+            else if ((i + 1) < inputs.length && this.value.length >= 1) {
                 inputs[i + 1].focus();
             }
 
         }
-
     }
+});
+
+function backspaceButton() {
+    myTextarea.value = myTextarea.value.substring(0, myTextarea.value.length - 1);
+
 }
+
+
+
 
 
 
