@@ -14,125 +14,144 @@ let letrecoDoDia = "vasco";
 
 
 function teste() {
-    //declarando os valores
-    let valor1 = document.getElementById("firstLetter").value;
-    let valor2 = document.getElementById("secondLetter").value;
-    let valor3 = document.getElementById("thirdLetter").value;
-    let valor4 = document.getElementById("fourthLetter").value;
-    let valor5 = document.getElementById("fifthLetter").value;
-    let valorGeral = [valor1, valor2, valor3, valor4, valor5]
-    console.log(valorGeral)
+    let primeiraTentativa = [document.querySelector("#firstLetter").value, document.querySelector("#secondLetter").value, document.querySelector("#thirdLetter").value, document.querySelector("#fourthLetter").value, document.querySelector("#fifthLetter").value]
+    console.log(primeiraTentativa)
 
-    if (valor1 != "" && valor2 != "" && valor3 != "" && valor4 != "" && valor5 != "") {
-    } else {
-        document.location.reload(true);
-        return
-    }
+    let match1 = letrecoDoDia.indexOf(primeiraTentativa[0])
+    let match2 = letrecoDoDia.indexOf(primeiraTentativa[1])
+    let match3 = letrecoDoDia.indexOf(primeiraTentativa[2])
+    let match4 = letrecoDoDia.indexOf(primeiraTentativa[3])
+    let match5 = letrecoDoDia.indexOf(primeiraTentativa[4])
+    let matchGeral = [match1, match2, match3, match4, match5]
+    console.log(matchGeral)
 
-    //match dos valores do indexof
-    let match1 = letrecoDoDia.indexOf(valor1)
-    let match2 = letrecoDoDia.indexOf(valor2)
-    let match3 = letrecoDoDia.indexOf(valor3)
-    let match4 = letrecoDoDia.indexOf(valor4)
-    let match5 = letrecoDoDia.indexOf(valor5)
-
-    if (match1 === -1) {
+    if (matchGeral[0] === -1) {
         let element = document.getElementById("firstLetter");
         element.style.backgroundColor = "#ff0000";
         console.log("não encontrado")
     }
 
-    if (match1 !== -1) {
-        if (match1 === 0) {
-            let element = document.getElementById("firstLetter");
-            element.style.backgroundColor = "#00ff00";
-            console.log("encontrado no local certo")
-        }
-        if (match1 === 1 || match1 === 2 || match1 === 3 || match1 === 4) {
-            let element = document.getElementById("firstLetter");
-            element.style.backgroundColor = "#ffff00";
-            console.log("encontrado mas no local errado")
-        }
-    }
 
-    if (match2 === -1) {
-        let element = document.getElementById("secondLetter");
-        element.style.backgroundColor = "#ff0000";
-        console.log("não encontrado")
-    }
 
-    if (match2 !== -1) {
-        if (match2 === 1) {
-            let element = document.getElementById("secondLetter");
-            element.style.backgroundColor = "#00ff00";
-            console.log("encontrado no local certo")
-        }
-        if (match2 === 0 || match2 === 2 || match2 === 3 || match2 === 4) {
-            let element = document.getElementById("secondLetter");
-            element.style.backgroundColor = "#ffff00";
-            console.log("encontrado mas no local errado")
-        }
-    }
+    // //declarando os valores
+    // let valor1 = document.getElementById("firstLetter").value;
+    // let valor2 = document.getElementById("secondLetter").value;
+    // let valor3 = document.getElementById("thirdLetter").value;
+    // let valor4 = document.getElementById("fourthLetter").value;
+    // let valor5 = document.getElementById("fifthLetter").value;
+    // let valorGeral = [valor1, valor2, valor3, valor4, valor5]
+    // console.log(valorGeral)
 
-    if (match3 === -1) {
-        let element = document.getElementById("thirdLetter");
-        element.style.backgroundColor = "#ff0000";
-        console.log("não encontrado")
-    }
+    // if (valor1 != "" && valor2 != "" && valor3 != "" && valor4 != "" && valor5 != "") {
+    // } else {
+    //     document.location.reload(true);
+    //     return
+    // }
 
-    if (match3 !== -1) {
-        if (match3 === 2) {
-            let element = document.getElementById("thirdLetter");
-            element.style.backgroundColor = "#00ff00";
-            console.log("encontrado no local certo")
-        }
-        if (match3 === 0 || match3 === 1 || match3 === 3 || match3 === 4) {
-            let element = document.getElementById("thirdLetter");
-            element.style.backgroundColor = "#ffff00";
-            console.log("encontrado mas no local errado")
-        }
-    }
+    // //match dos valores do indexof
+    // let match1 = letrecoDoDia.indexOf(valor1)
+    // let match2 = letrecoDoDia.indexOf(valor2)
+    // let match3 = letrecoDoDia.indexOf(valor3)
+    // let match4 = letrecoDoDia.indexOf(valor4)
+    // let match5 = letrecoDoDia.indexOf(valor5)
 
-    if (match4 === -1) {
-        let element = document.getElementById("fourthLetter");
-        element.style.backgroundColor = "#ff0000";
-        console.log("não encontrado")
-    }
+    // if (match1 === -1) {
+    //     let element = document.getElementById("firstLetter");
+    //     element.style.backgroundColor = "#ff0000";
+    //     console.log("não encontrado")
+    // }
 
-    if (match4 !== -1) {
-        if (match4 === 3) {
-            let element = document.getElementById("fourthLetter");
-            element.style.backgroundColor = "#00ff00";
-            console.log("encontrado no local certo")
-        }
-        if (match4 === 0 || match4 === 1 || match4 === 2 || match4 === 4) {
-            let element = document.getElementById("fourthLetter");
-            element.style.backgroundColor = "#ffff00";
-            console.log("encontrado mas no local errado")
-        }
-    }
+    // if (match1 !== -1) {
+    //     if (match1 === 0) {
+    //         let element = document.getElementById("firstLetter");
+    //         element.style.backgroundColor = "#00ff00";
+    //         console.log("encontrado no local certo")
+    //     }
+    //     if (match1 === 1 || match1 === 2 || match1 === 3 || match1 === 4) {
+    //         let element = document.getElementById("firstLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
 
-    if (match5 === -1) {
-        let element = document.getElementById("fifthLetter");
-        element.style.backgroundColor = "#ff0000";
-        console.log("não encontrado")
-    }
+    // if (match2 === -1) {
+    //     let element = document.getElementById("secondLetter");
+    //     element.style.backgroundColor = "#ff0000";
+    //     console.log("não encontrado")
+    // }
 
-    if (match5 !== -1) {
-        if (match5 === 4) {
-            let element = document.getElementById("fifthLetter");
-            element.style.backgroundColor = "#00ff00";
-            console.log("encontrado no local certo")
-        }
-        if (match5 === 0 || match5 === 1 || match5 === 2 || match5 === 3) {
-            let element = document.getElementById("fifthLetter");
-            element.style.backgroundColor = "#ffff00";
-            console.log("encontrado mas no local errado")
-        }
-    }
+    // if (match2 !== -1) {
+    //     if (match2 === 1) {
+    //         let element = document.getElementById("secondLetter");
+    //         element.style.backgroundColor = "#00ff00";
+    //         console.log("encontrado no local certo")
+    //     }
+    //     if (match2 === 0 || match2 === 2 || match2 === 3 || match2 === 4) {
+    //         let element = document.getElementById("secondLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
 
-    let matchGeral = [match1, match2, match3, match4, match5]
-    console.log(matchGeral)
+    // if (match3 === -1) {
+    //     let element = document.getElementById("thirdLetter");
+    //     element.style.backgroundColor = "#ff0000";
+    //     console.log("não encontrado")
+    // }
+
+    // if (match3 !== -1) {
+    //     if (match3 === 2) {
+    //         let element = document.getElementById("thirdLetter");
+    //         element.style.backgroundColor = "#00ff00";
+    //         console.log("encontrado no local certo")
+    //     }
+    //     if (match3 === 0 || match3 === 1 || match3 === 3 || match3 === 4) {
+    //         let element = document.getElementById("thirdLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
+
+    // if (match4 === -1) {
+    //     let element = document.getElementById("fourthLetter");
+    //     element.style.backgroundColor = "#ff0000";
+    //     console.log("não encontrado")
+    // }
+
+    // if (match4 !== -1) {
+    //     if (match4 === 3) {
+    //         let element = document.getElementById("fourthLetter");
+    //         element.style.backgroundColor = "#00ff00";
+    //         console.log("encontrado no local certo")
+    //     }
+    //     if (match4 === 0 || match4 === 1 || match4 === 2 || match4 === 4) {
+    //         let element = document.getElementById("fourthLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
+
+    // if (match5 === -1) {
+    //     let element = document.getElementById("fifthLetter");
+    //     element.style.backgroundColor = "#ff0000";
+    //     console.log("não encontrado")
+    // }
+
+    // if (match5 !== -1) {
+    //     if (match5 === 4) {
+    //         let element = document.getElementById("fifthLetter");
+    //         element.style.backgroundColor = "#00ff00";
+    //         console.log("encontrado no local certo")
+    //     }
+    //     if (match5 === 0 || match5 === 1 || match5 === 2 || match5 === 3) {
+    //         let element = document.getElementById("fifthLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
+
+    // let matchGeral = [match1, match2, match3, match4, match5]
+    // console.log(matchGeral)
 
 }
 
@@ -161,7 +180,9 @@ document.addEventListener("keypress", function (evento) {
 });
 
 function backspaceButton() {
-    myTextarea.value = myTextarea.value.substring(0, myTextarea.value.length - 1);
+    // myTextarea.value = myTextarea.value.substring(0, myTextarea.value.length - 1);
+    let qtd = [document.querySelector("#firstLetter").value, document.querySelector("#secondLetter").value]
+    console.log(qtd)
 
 }
 
