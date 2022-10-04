@@ -1,17 +1,5 @@
 let letrecoDoDia = "vasco";
 
-// let tentativaAtual = document.querySelectorAll(".boxesRow input").value;
-// console.logo
-// for (let i = 0; i < tentativaAtual.length; ++i) {
-//         if (tentativaAtual.length <= 5) {
-//             document.getElementById("submitButton").disabled = false;
-//         }
-//         else if ((i + 1) < inputs.length && this.value.length >= 1) {
-//             inputs[i + 1].focus();
-//         }
-
-//     }
-
 
 function teste() {
     let primeiraTentativa = [document.querySelector("#firstLetter").value, document.querySelector("#secondLetter").value, document.querySelector("#thirdLetter").value, document.querySelector("#fourthLetter").value, document.querySelector("#fifthLetter").value]
@@ -24,14 +12,223 @@ function teste() {
     let match5 = letrecoDoDia.indexOf(primeiraTentativa[4])
     let matchGeral = [match1, match2, match3, match4, match5]
     console.log(matchGeral)
-
-    if (matchGeral[0] === -1) {
+    
+    //ACHANDO A LETRA ERRADA NO INDICE [0]
+    if (matchGeral.indexOf(-1, [0]) === 0) {
         let element = document.getElementById("firstLetter");
         element.style.backgroundColor = "#ff0000";
         console.log("não encontrado")
     }
+    //ACHANDO A LETRA ERRADA NO INDICE [1]
+    if (matchGeral.indexOf(-1, [1]) === 1) {
+        let element = document.getElementById("secondLetter");
+        element.style.backgroundColor = "#ff0000";
+        console.log("não encontrado")
+    }
+    //ACHANDO A LETRA ERRADA NO INDICE [2]
+    if (matchGeral.indexOf(-1, [2]) === 2) {
+        let element = document.getElementById("thirdLetter");
+        element.style.backgroundColor = "#ff0000";
+        console.log("não encontrado")
+    }
+    //ACHANDO A LETRA ERRADA NO INDICE [3]
+    if (matchGeral.indexOf(-1, [3]) === 3) {
+        let element = document.getElementById("fourthLetter");
+        element.style.backgroundColor = "#ff0000";
+        console.log("não encontrado")
+    }
+    //ACHANDO A LETRA ERRADA NO INDICE [4]
+    if (matchGeral.indexOf(-1, [4]) === 4) {
+        let element = document.getElementById("fifthLetter");
+        element.style.backgroundColor = "#ff0000";
+        console.log("não encontrado")
+    }
+    
+    
+    //ACHANDO AS LETRAS NEUTRAS NOS INDICES [0]
+        if (matchGeral.indexOf(1) === 0 || matchGeral.indexOf(2) === 0 || matchGeral.indexOf(3) === 0 || matchGeral.indexOf(4) === 0) {
+            let element = document.getElementById("firstLetter");
+            element.style.backgroundColor = "#ffff00";
+            console.log("encontrado mas no local errado")
+        }
+        if (matchGeral.indexOf(0) === 1 || matchGeral.indexOf(2) === 1 || matchGeral.indexOf(3) === 1 || matchGeral.indexOf(4) === 1) {
+            let element = document.getElementById("secondLetter");
+            element.style.backgroundColor = "#ffff00";
+            console.log("encontrado mas no local errado")
+        }
+        if (matchGeral.indexOf(0) === 2 || matchGeral.indexOf(1) === 2 || matchGeral.indexOf(3) === 2 || matchGeral.indexOf(4) === 2) {
+            let element = document.getElementById("thirdLetter");
+            element.style.backgroundColor = "#ffff00";
+            console.log("encontrado mas no local errado")
+        }
+        if (matchGeral.indexOf(0) === 3 || matchGeral.indexOf(1) === 3 || matchGeral.indexOf(2) === 3 || matchGeral.indexOf(4) === 3) {
+            let element = document.getElementById("fourthLetter");
+            element.style.backgroundColor = "#ffff00";
+            console.log("encontrado mas no local errado")
+        }
+        if (matchGeral.indexOf(0) === 4 || matchGeral.indexOf(1) === 4 || matchGeral.indexOf(2) === 4 || matchGeral.indexOf(3) === 4) {
+            let element = document.getElementById("fifthLetter");
+            element.style.backgroundColor = "#ffff00";
+            console.log("encontrado mas no local errado")
+        }
+        // if (matchGeral.indexOf(0) === 3) {
+        //     let element = document.getElementById("fourthLetter");
+        //     element.style.backgroundColor = "#ffff00";
+        //     console.log("encontrado mas no local errado")
+
+        // }
+        // if (matchGeral.indexOf(0) === 4) {
+        //     let element = document.getElementById("fifthLetter");
+        //     element.style.backgroundColor = "#ffff00";
+        //     console.log("encontrado mas no local errado")
+            
+    
+    
+    
+
+    // //ACHANDO AS LETRAS NEUTRAS NO INDICE [1]
+    // if (matchGeral.indexOf(1) >= 0) {
+    //     if (matchGeral.indexOf(1) === 0) {
+    //         let element = document.getElementById("firstLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+
+    //     }
+    //     if (matchGeral.indexOf(1) === 2) {
+    //         let element = document.getElementById("thirdLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+
+    //     }
+    //     if (matchGeral.indexOf(1) === 3) {
+    //         let element = document.getElementById("fourthLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+
+    //     }
+    //     if (matchGeral.indexOf(1) === 4) {
+    //         let element = document.getElementById("fifthLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
 
 
+    // //ACHANDO AS LETRAS NEUTRAS NO INDICE [2]
+    // if (matchGeral.indexOf(2) >= 0) {
+    //     if (matchGeral.indexOf(2) === 0) {
+    //         let element = document.getElementById("firstLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    //     if (matchGeral.indexOf(2) === 1) {
+    //         let element = document.getElementById("secondLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+
+    //     }
+    //     if (matchGeral.indexOf(2) === 3) {
+    //         let element = document.getElementById("fourthLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    //     if (matchGeral.indexOf(2) === 4) {
+    //         let element = document.getElementById("fifthLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
+
+
+    // //ACHANDO AS LETRAS NEUTRAS NO INDICE [3]
+    // if (matchGeral.indexOf(3) >= 0) {
+    //     if (matchGeral.indexOf(3) === 0) {
+    //         let element = document.getElementById("firstLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    //     if (matchGeral.indexOf(3) === 1) {
+    //         let element = document.getElementById("secondLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+
+    //     }
+    //     if (matchGeral.indexOf(3) === 2) {
+    //         let element = document.getElementById("thirdLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    //     if (matchGeral.indexOf(3) === 4) {
+    //         let element = document.getElementById("fifthLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
+
+
+    // //ACHANDO AS LETRAS NEUTRAS NO INDICE [4]
+    // if (matchGeral.indexOf(4) >= 0) {
+    //     if (matchGeral.indexOf(4) === 0) {
+    //         let element = document.getElementById("firstLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    //     if (matchGeral.indexOf(4) === 1) {
+    //         let element = document.getElementById("secondLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+
+    //     }
+    //     if (matchGeral.indexOf(4) === 2) {
+    //         let element = document.getElementById("thirdLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    //     if (matchGeral.indexOf(4) === 3) {
+    //         let element = document.getElementById("fourthLetter");
+    //         element.style.backgroundColor = "#ffff00";
+    //         console.log("encontrado mas no local errado")
+    //     }
+    // }
+
+    //ACHANDO A LETRA CERTA NO INDICE [0]
+    if (matchGeral.indexOf(0) === 0) {
+        let element = document.getElementById("firstLetter");
+        element.style.backgroundColor = "#00ff00";
+        console.log("encontrado no local certo")
+    }
+
+    //ACHANDO A LETRA CERTA NO INDICE [1]
+    if (matchGeral.indexOf(1) === 1) {
+        let element = document.getElementById("secondLetter");
+        element.style.backgroundColor = "#00ff00";
+        console.log("encontrado no local certo")
+    }
+
+    //ACHANDO A LETRA CERTA NO INDICE [2]
+    if (matchGeral.indexOf(2) === 2) {
+        let element = document.getElementById("thirdLetter");
+        element.style.backgroundColor = "#00ff00";
+        console.log("encontrado no local certo")
+    }
+    
+    //ACHANDO A LETRA CERTA NO INDICE [3]
+    if (matchGeral.indexOf(3) === 3) {
+        let element = document.getElementById("fourthLetter");
+        element.style.backgroundColor = "#00ff00";
+        console.log("encontrado no local certo")
+    }
+
+    //ACHANDO A LETRA CERTA NO INDICE [4]
+    if (matchGeral.indexOf(4) === 4) {
+        let element = document.getElementById("fifthLetter");
+        element.style.backgroundColor = "#00ff00";
+        console.log("encontrado no local certo")
+    }
+    
+    // let tirateima = matchGeral.indexOf(-1,[0]) === 0
+    // console.log(tirateima)
+    //ACHANDO AS LETRAS NEUTRAS
 
     // //declarando os valores
     // let valor1 = document.getElementById("firstLetter").value;
