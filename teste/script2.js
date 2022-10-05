@@ -159,9 +159,15 @@ function verificarInputs() {
     }
 }
 
-function backspaceButton() {
-    // myTextarea.value = myTextarea.value.substring(0, myTextarea.value.length - 1);
-    let qtd = [document.querySelector("#firstLetter").value, document.querySelector("#secondLetter").value]
-    console.log(qtd)
+function backspace() {
+    let inputs = document.querySelectorAll(".inputsRow input");
+    console.log(inputs)
+        if (inputs.length > 0 && this.value.length == 0) {
+            inputs[i - 1].focus();
+        }
+        else if ((i + 1) < inputs.length && this.value.length >= 1) {
+            inputs[i + 1].focus();
+        }
 
 }
+
