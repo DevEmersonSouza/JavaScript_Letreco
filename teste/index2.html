@@ -9,18 +9,104 @@
 <body onload="firstLetter.focus()">
     <div class="boxesRow">
         <div class="inputsRow" id="inputsRow">
-            <input type="text" class="box" maxlength="1" id="firstLetter" onkeyup="secondLetter.focus()">
-            <input type="text" class="box" maxlength="1" id="secondLetter" onkeyup="thirdLetter.focus()">
-            <input type="text" class="box" maxlength="1" id="thirdLetter" onkeyup="fourthLetter.focus()">
-            <input type="text" class="box" maxlength="1" id="fourthLetter" onkeyup="fifthLetter.focus()">
+            <input type="text" class="box" maxlength="1" id="firstLetter" onkeypress="proximoInput()">
+            <input type="text" class="box" maxlength="1" id="secondLetter" onkeypress="proximoInput()">
+            <input type="text" class="box" maxlength="1" id="thirdLetter" onkeypress="proximoInput()">
+            <input type="text" class="box" maxlength="1" id="fourthLetter" onkeypress="proximoInput()">
             <input type="text" class="box" maxlength="1" id="fifthLetter">
         </div>
         
     </div>
     <div class="submitRow">
         <input type="submit" value="Match!" onclick="match(); verificarInputs()" class="submitButton" id="submitButton" >
-        <input type="submit" value="X" class="backspaceButton" id="backspaceButton" onclick="backspace()">
     </div>
+    <div class="keyboardRow">
+        <div class="firstKeyboardRow">
+            <button onclick="keyboard('q')">
+                <span>q</span>
+            </button>
+            <button onclick="keyboard('w')">
+                <span>w</span>
+            </button>
+            <button>
+                <span>e</span>
+            </button>
+            <button>
+                <span>r</span>
+            </button>
+            <button>
+                <span>t</span>
+            </button>
+            <button>
+                <span>y</span>
+            </button>
+            <button>
+                <span>u</span>
+            </button>
+            <button>
+                <span>i</span>
+            </button>
+            <button>
+                <span>o</span>
+            </button>
+            <button>
+                <span>p</span>
+            </button>
+        </div>
+        <div class="secondkeyboardRow">
+            <button>
+                <span>a</span>
+            </button>
+            <button>
+                <span>s</span>
+            </button>
+            <button>
+                <span>d</span>
+            </button>
+            <button>
+                <span>f</span>
+            </button>
+            <button>
+                <span>g</span>
+            </button>
+            <button>
+                <span>h</span>
+            </button>
+            <button>
+                <span>j</span>
+            </button>
+            <button>
+                <span>k</span>
+            </button>
+            <button>
+                <span>l</span>
+            </button>
+        </div>
+        <div class="thirdKeyboardRow">
+            <button>
+                <span>z</span>
+            </button>
+            <button>
+                <span>x</span>
+            </button>
+            <button>
+                <span>c</span>
+            </button>
+            <button>
+                <span>v</span>
+            </button>
+            <button>
+                <span>b</span>
+            </button>
+            <button>
+                <span>n</span>
+            </button>
+            <button>
+                <span>m</span>
+            </button>
+        </div>
+    </div>
+
     <script src="script2.js"></script>
 </body>
 </html>

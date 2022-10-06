@@ -1,4 +1,39 @@
-let letrecoDoDia = "vasco";
+let letrecoDoDia = "talco";
+let focused = null;
+
+
+function proximoInput() {
+    if (firstLetter.value !== null) {
+        secondLetter.focus()
+        if (secondLetter.value !== null) {
+            thirdLetter.focus()
+            if (thirdLetter.value !== null) {
+                fourthLetter.focus()
+                if (fourthLetter.value !== null) {
+                    fifthLetter.focus()
+                }
+            }
+        }
+    }
+}
+
+
+// function keyboard(value) {
+//     let inputs = document.querySelectorAll(".boxesRow input");
+    
+//     for (let i = 0; i < 1; i++) {
+//         if(inputs.length > 0){
+//             inputs[i].value = inputs[i].value+value
+//                 if (focused && focused.length) {
+//                     firstLetter.focus()
+//                     focused.next('.box').focus();
+//                 }
+//         }
+
+        
+//     }
+
+// }
 
 function match() {
     firstLetter.style.backgroundColor = "#ff0000";
@@ -106,6 +141,11 @@ function match() {
         element.style.backgroundColor = "#ffff00";
         console.log("encontrado mas no local errado")
     }
+    firstLetter.disabled = true
+    secondLetter.disabled = true
+    thirdLetter.disabled = true
+    fourthLetter.disabled = true
+    fifthLetter.disabled = true
 }
 
 //CHAMANDO A FUNÇÃO NA TECLA "ENTER" DO TECLADO
@@ -117,7 +157,7 @@ document.addEventListener("keypress", function (e) {
 });
 
 //CRIANDO A FUNÇÃO BACKSPACE DO TECLADO ENTRE OS INPUTS
-document.addEventListener("keypress", function (evento) {
+document.addEventListener("keypress", function () {
     let inputs = document.querySelectorAll(".boxesRow input");
     for (let i = 0; i < inputs.length; ++i) {
         inputs[i].onkeyup = function (evento) {
@@ -133,6 +173,7 @@ document.addEventListener("keypress", function (evento) {
         }
     }
 });
+
 
 // VERIFICAÇÃO PARA IDENTIFICAR SE A PALAVRA TEM 5 LETRAS
 
@@ -159,15 +200,5 @@ function verificarInputs() {
     }
 }
 
-function backspace() {
-    let inputs = document.querySelectorAll(".inputsRow input");
-    console.log(inputs)
-        if (inputs.length > 0 && this.value.length == 0) {
-            inputs[i - 1].focus();
-        }
-        else if ((i + 1) < inputs.length && this.value.length >= 1) {
-            inputs[i + 1].focus();
-        }
 
-}
 
