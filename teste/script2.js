@@ -3,13 +3,13 @@ let focused = null;
 
 
 function proximoInput() {
-    if (firstLetter.value !== null) {
+    if (firstLetter.maxlength === 1) {
         secondLetter.focus()
-        if (secondLetter.value !== null) {
+        if (secondLetter.maxlength === 1) {
             thirdLetter.focus()
-            if (thirdLetter.value !== null) {
+            if (thirdLetter.maxlength === 1) {
                 fourthLetter.focus()
-                if (fourthLetter.value !== null) {
+                if (fourthLetter.maxlength === 1) {
                     fifthLetter.focus()
                 }
             }
@@ -18,22 +18,9 @@ function proximoInput() {
 }
 
 
-// function keyboard(value) {
-//     let inputs = document.querySelectorAll(".boxesRow input");
-    
-//     for (let i = 0; i < 1; i++) {
-//         if(inputs.length > 0){
-//             inputs[i].value = inputs[i].value+value
-//                 if (focused && focused.length) {
-//                     firstLetter.focus()
-//                     focused.next('.box').focus();
-//                 }
-//         }
+function keyboard(value) {
 
-        
-//     }
-
-// }
+}
 
 function match() {
     firstLetter.style.backgroundColor = "#ff0000";
