@@ -89,19 +89,10 @@ function match() {
     console.log(matchGeral);
 
     if (firstLetter.value === "t" && secondLetter.value === "a" && thirdLetter.value === "l" && fourthLetter.value === "c" && fifthLetter.value === "o") {
-        Swal.fire(
-            'Parabéns!',
-            'voce ganhou um bombom<br>(e o jogo também)<br>(mas nao me pergunte quem vai dar ele, sou apens um alert :))',
-        );
-    }
-    if (matchGeral.includes(-1)) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Para de fracassar e tenta de novo!',
-        });
-
-        setTimeout(clearButton(),3000);
+        alert("Parabéns!,voce ganhou um bombom(e o jogo também)(mas nao me pergunte quem vai dar ele, sou apens um alert :))")
+        }
+        if (matchGeral.includes(-1)) {
+        alert("Oops...Para de fracassar e tenta de novo!")         
     }
 
     //ACHANDO A LETRA CERTA NO INDICE [0]
@@ -229,11 +220,7 @@ function contador() {
     disp.innerHTML = count;
 
     if (count === 0) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Suas Tentativas Acabaram(GAME OVER)',
-        });
+        alert("Suas tentativas acabaram - GAME OVER :(")
         firstLetter.disabled = true;
         secondLetter.disabled = true;
         thirdLetter.disabled = true;
