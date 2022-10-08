@@ -1,7 +1,56 @@
 let letrecoDoDia = "talco";
-let focused = null;
+let count = 5;
+let inputs = document.querySelectorAll("#inputsRow input");
+let tentativas = []
+
+// VERIFICAÇÃO PARA IDENTIFICAR SE A PALAVRA TEM 5 LETRAS
+function verificarInputs() {
+
+    let val1 = document.getElementById("firstLetter").value;
+    let val2 = document.getElementById("secondLetter").value;
+    let val3 = document.getElementById("thirdLetter").value;
+    let val4 = document.getElementById("fourthLetter").value;
+    let val5 = document.getElementById("fifthLetter").value;
+
+    if (val1 != "" && val2 != "" && val3 != "" && val4 != "" && val5 != "") {
+
+    } else {
+        firstLetter.style.backgroundColor = "#ffffff";
+        secondLetter.style.backgroundColor = "#ffffff";
+        thirdLetter.style.backgroundColor = "#ffffff";
+        fourthLetter.style.backgroundColor = "#ffffff";
+        fifthLetter.style.backgroundColor = "#ffffff";
+        alert("Apenas palavras com 5 letras");
+        window.location.reload(false);
+
+        firstLetter.focus();
+    }
+}
+
+function clearButton() {
+    firstLetter.value = ""
+    secondLetter.value = ""
+    thirdLetter.value = ""
+    fourthLetter.value = ""
+    fifthLetter.value = ""
 
 
+    firstLetter.style.backgroundColor = "#ffffff";
+    secondLetter.style.backgroundColor = "#ffffff";
+    thirdLetter.style.backgroundColor = "#ffffff";
+    fourthLetter.style.backgroundColor = "#ffffff";
+    fifthLetter.style.backgroundColor = "#ffffff";
+
+    firstLetter.disabled = false
+    secondLetter.disabled = false
+    thirdLetter.disabled = false
+    fourthLetter.disabled = false
+    fifthLetter.disabled = false
+
+    firstLetter.focus();
+}
+
+//PASSAR AUTOMATICAMENTE PARA O PROXIMO INPUT
 function proximoInput() {
     if (firstLetter.maxlength === 1) {
         secondLetter.focus()
@@ -11,6 +60,9 @@ function proximoInput() {
                 fourthLetter.focus()
                 if (fourthLetter.maxlength === 1) {
                     fifthLetter.focus()
+                    if (fourthLetter.maxlength === 1) {
+                        fifthLetter.focus()
+                    }
                 }
             }
         }
@@ -18,19 +70,15 @@ function proximoInput() {
 }
 
 
-function keyboard(value) {
-
-}
 
 function match() {
+    let primeiraTentativa = [document.querySelector("#firstLetter").value.toLowerCase(), document.querySelector("#secondLetter").value.toLowerCase(), document.querySelector("#thirdLetter").value.toLowerCase(), document.querySelector("#fourthLetter").value.toLowerCase(), document.querySelector("#fifthLetter").value.toLowerCase()]
+    console.log(primeiraTentativa)
     firstLetter.style.backgroundColor = "#ff0000";
     secondLetter.style.backgroundColor = "#ff0000";
     thirdLetter.style.backgroundColor = "#ff0000";
     fourthLetter.style.backgroundColor = "#ff0000";
     fifthLetter.style.backgroundColor = "#ff0000";
-
-    let primeiraTentativa = [document.querySelector("#firstLetter").value, document.querySelector("#secondLetter").value, document.querySelector("#thirdLetter").value, document.querySelector("#fourthLetter").value, document.querySelector("#fifthLetter").value]
-    console.log(primeiraTentativa)
 
     let match1 = letrecoDoDia.indexOf(primeiraTentativa[0])
     let match2 = letrecoDoDia.indexOf(primeiraTentativa[1])
@@ -39,6 +87,22 @@ function match() {
     let match5 = letrecoDoDia.indexOf(primeiraTentativa[4])
     let matchGeral = [match1, match2, match3, match4, match5]
     console.log(matchGeral)
+
+    if (firstLetter.value === "t" && secondLetter.value === "a" && thirdLetter.value === "l" && fourthLetter.value === "c" && fifthLetter.value === "o") {
+        Swal.fire(
+            'Parabéns!',
+            'voce ganhou um bombom<br>(e o jogo também)<br>(mas nao me pergunte quem vai dar ele, sou apens um alert :))',
+        )
+    }
+    if (matchGeral.includes(-1)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Para de fracassar e tenta de novo!',
+        })
+
+    }
+
     //ACHANDO A LETRA CERTA NO INDICE [0]
     if (matchGeral.indexOf(0) === 0) {
         let element = document.getElementById("firstLetter");
@@ -135,19 +199,79 @@ function match() {
     fifthLetter.disabled = true
 }
 
+
+
+//função para adicionar mais um nome à lista
+function adicionar() {
+    let primeiraTentativa = [document.querySelector("#firstLetter").value.toLowerCase(),document.querySelector("#secondLetter").value.toLowerCase(), document.querySelector("#thirdLetter").value.toLowerCase(), document.querySelector("#fourthLetter").value.toLowerCase(), document.querySelector("#fifthLetter").value.toLowerCase()]
+    let nomeDig = document.createElement('li');
+    let primeiraTentativaArray = primeiraTentativa[0] + primeiraTentativa[1] + primeiraTentativa[2] + primeiraTentativa[3] + primeiraTentativa[4] ;
+
+    nomeDig.innerHTML = primeiraTentativaArray;
+    lista.appendChild(nomeDig);
+}
+
+
+function contador() {
+    let btn = document.getElementById("submitButton");
+    let disp = document.getElementById("display");
+    btn.onclick
+    count--;
+    disp.innerHTML = count;
+
+    if (count === 0) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Suas Tentativas Acabaram(GAME OVER)',
+        })
+        
+    }
+
+}
+
+function keyboard(value) {
+    if (inputs[0].value === "") {
+        inputs[0].value = inputs[0].value + value;
+        inputs[1].focus()
+        return
+    }
+    if (inputs[1].value === "") {
+        inputs[1].value = inputs[1].value + value;
+        inputs[2].focus()
+        return
+    }
+    if (inputs[2].value === "") {
+        inputs[2].value = inputs[2].value + value;
+        inputs[3].focus()
+        return
+    }
+    if (inputs[3].value === "") {
+        inputs[3].value = inputs[3].value + value;
+        inputs[4].focus()
+        return
+    }
+    if (inputs[4].value === "") {
+        inputs[4].value = inputs[4].value + value;
+    }
+    if (inputs[4].value != "") {
+        inputs[4].focus()
+    }
+}
+
 //CHAMANDO A FUNÇÃO NA TECLA "ENTER" DO TECLADO
 document.addEventListener("keypress", function (e) {
     if (e.key === 'Enter') {
-        let btn = document.getElementById("submitButton");
-        btn.click(match());
+        match()
+        verificarInputs()
     }
 });
 
 //CRIANDO A FUNÇÃO BACKSPACE DO TECLADO ENTRE OS INPUTS
 document.addEventListener("keypress", function () {
-    let inputs = document.querySelectorAll(".boxesRow input");
+    let inputs = document.querySelectorAll(".inputsRow input");
     for (let i = 0; i < inputs.length; ++i) {
-        inputs[i].onkeyup = function (evento) {
+        inputs[i].onkeydown = function (evento) {
             if (evento.key == "Backspace") {
                 if (i > 0 && this.value.length == 0) {
                     inputs[i - 1].focus();
@@ -156,36 +280,30 @@ document.addEventListener("keypress", function () {
             else if ((i + 1) < inputs.length && this.value.length >= 1) {
                 inputs[i + 1].focus();
             }
-
         }
     }
-});
-
-
-// VERIFICAÇÃO PARA IDENTIFICAR SE A PALAVRA TEM 5 LETRAS
-
-function verificarInputs() {
-
-    let val1 = document.getElementById("firstLetter").value;
-    let val2 = document.getElementById("secondLetter").value;
-    let val3 = document.getElementById("thirdLetter").value;
-    let val4 = document.getElementById("fourthLetter").value;
-    let val5 = document.getElementById("fifthLetter").value;
-
-    if (val1 != "" && val2 != "" && val3 != "" && val4 != "" && val5 != "") {
-
-    } else {
-        firstLetter.style.backgroundColor = "#ffffff";
-        secondLetter.style.backgroundColor = "#ffffff";
-        thirdLetter.style.backgroundColor = "#ffffff";
-        fourthLetter.style.backgroundColor = "#ffffff";
-        fifthLetter.style.backgroundColor = "#ffffff";
-        alert("Apenas palavras com 5 letras");
-        window.location.reload(false);
-
-        firstLetter.focus();
+}
+);
+document.addEventListener("click", function () {
+    let inputs = document.querySelectorAll(".inputsRow input");
+    for (let i = 0; i < inputs.length; ++i) {
+        inputs[i].onkeydown = function (evento) {
+            if (evento.key == "Backspace") {
+                if (i > 0 && this.value.length == 0) {
+                    inputs[i - 1].focus();
+                }
+            }
+            else if ((i + 1) < inputs.length && this.value.length >= 1) {
+                inputs[i + 1].focus();
+            }
+        }
     }
 }
+);
+
+
+
+
 
 
 

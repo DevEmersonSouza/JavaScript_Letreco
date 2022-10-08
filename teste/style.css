@@ -10,6 +10,13 @@ input {
     all: unset;
 }
 
+.keyboardRow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
 .boxesRow {
     display: flex;
     flex-direction: column;
@@ -38,10 +45,9 @@ input {
     border: 1px solid black;
 }
 
-.backspaceButton {
+.clearButton {
     font-size: 16pt;
     text-align: center;
-    font-weight: 700;
     margin: 15px;
     padding: 5px;
     width: 60px;

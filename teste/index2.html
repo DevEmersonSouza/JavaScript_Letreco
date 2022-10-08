@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" src="sweetalert2.min.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body onload="firstLetter.focus()">
-    <div class="boxesRow">
+    <div class="boxesRow" id="boxesRow">
+        <div class="title">
+            Letroço
+        </div>
+        <div class="subtitle">
+            By Emerson Souza
+        </div>
         <div class="inputsRow" id="inputsRow">
             <input type="text" class="box" maxlength="1" id="firstLetter" onkeypress="proximoInput()">
             <input type="text" class="box" maxlength="1" id="secondLetter" onkeypress="proximoInput()">
@@ -15,98 +26,108 @@
             <input type="text" class="box" maxlength="1" id="fourthLetter" onkeypress="proximoInput()">
             <input type="text" class="box" maxlength="1" id="fifthLetter">
         </div>
-        
-    </div>
-    <div class="submitRow">
-        <input type="submit" value="Match!" onclick="match(); verificarInputs()" class="submitButton" id="submitButton" >
-    </div>
-    <div class="keyboardRow">
-        <div class="firstKeyboardRow">
-            <button onclick="keyboard('q')">
-                <span>q</span>
-            </button>
-            <button onclick="keyboard('w')">
-                <span>w</span>
-            </button>
-            <button>
-                <span>e</span>
-            </button>
-            <button>
-                <span>r</span>
-            </button>
-            <button>
-                <span>t</span>
-            </button>
-            <button>
-                <span>y</span>
-            </button>
-            <button>
-                <span>u</span>
-            </button>
-            <button>
-                <span>i</span>
-            </button>
-            <button>
-                <span>o</span>
-            </button>
-            <button>
-                <span>p</span>
-            </button>
+        <div class="submitRow">
+            <input type="submit" value="Match!" onclick="match(); verificarInputs(); adicionar(); contador()"
+                class="submitButton" id="submitButton">
+            <input type="button" value="Clear" onclick="clearButton()" class="clearButton" id="clearButton">
         </div>
-        <div class="secondkeyboardRow">
-            <button>
-                <span>a</span>
-            </button>
-            <button>
-                <span>s</span>
-            </button>
-            <button>
-                <span>d</span>
-            </button>
-            <button>
-                <span>f</span>
-            </button>
-            <button>
-                <span>g</span>
-            </button>
-            <button>
-                <span>h</span>
-            </button>
-            <button>
-                <span>j</span>
-            </button>
-            <button>
-                <span>k</span>
-            </button>
-            <button>
-                <span>l</span>
-            </button>
+        <div class="keyboardRow">
+            <div class="firstKeyboardRow">
+                <button onclick="keyboard('q')">
+                    <span>q</span>
+                </button>
+                <button onclick="keyboard('w')">
+                    <span>w</span>
+                </button>
+                <button onclick="keyboard('e')">
+                    <span>e</span>
+                </button>
+                <button onclick="keyboard('r')">
+                    <span>r</span>
+                </button>
+                <button onclick="keyboard('t')">
+                    <span>t</span>
+                </button>
+                <button onclick="keyboard('y')">
+                    <span>y</span>
+                </button>
+                <button onclick="keyboard('u')">
+                    <span>u</span>
+                </button>
+                <button onclick="keyboard('i')">
+                    <span>i</span>
+                </button>
+                <button onclick="keyboard('o')">
+                    <span>o</span>
+                </button>
+                <button onclick="keyboard('p')">
+                    <span>p</span>
+                </button>
+            </div>
+            <div class="secondkeyboardRow">
+                <button onclick="keyboard('a')">
+                    <span>a</span>
+                </button>
+                <button onclick="keyboard('s')">
+                    <span>s</span>
+                </button>
+                <button onclick="keyboard('d')">
+                    <span>d</span>
+                </button>
+                <button onclick="keyboard('f')">
+                    <span>f</span>
+                </button>
+                <button onclick="keyboard('g')">
+                    <span>g</span>
+                </button>
+                <button onclick="keyboard('h')">
+                    <span>h</span>
+                </button>
+                <button onclick="keyboard('j')">
+                    <span>j</span>
+                </button>
+                <button onclick="keyboard('k')">
+                    <span>k</span>
+                </button>
+                <button onclick="keyboard('l')">
+                    <span>l</span>
+                </button>
+            </div>
+            <div class="thirdKeyboardRow">
+                <button onclick="keyboard('z')">
+                    <span>z</span>
+                </button>
+                <button onclick="keyboard('x')">
+                    <span>x</span>
+                </button>
+                <button onclick="keyboard('c')">
+                    <span>c</span>
+                </button>
+                <button onclick="keyboard('v')">
+                    <span>v</span>
+                </button>
+                <button>
+                    <span>b</span>
+                </button>
+                <button onclick="keyboard('n')">
+                    <span>n</span>
+                </button>
+                <button onclick="keyboard('m')">
+                    <span>m</span>
+                </button>
+            </div>
         </div>
-        <div class="thirdKeyboardRow">
-            <button>
-                <span>z</span>
-            </button>
-            <button>
-                <span>x</span>
-            </button>
-            <button>
-                <span>c</span>
-            </button>
-            <button>
-                <span>v</span>
-            </button>
-            <button>
-                <span>b</span>
-            </button>
-            <button>
-                <span>n</span>
-            </button>
-            <button>
-                <span>m</span>
-            </button>
-        </div>
+        <p>
+            Restam <span id="display" style="color:#ff0000 ;">5</span> Tentativas!
+        </p>
     </div>
+    <div>
+        <ul id="lista">
 
+        </ul>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script2.js"></script>
 </body>
+
 </html>
